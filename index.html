@@ -1,0 +1,42 @@
+<!-- Architecture: html + Bootrstap css + vanilla JS + FastAPI BE + sqlite DB -->
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shopper</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        html,
+        body {
+            height: 100%;
+            min-height: -webkit-fill-available;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-center">
+            <h1>Shopper</h1>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-4">
+            <h2>Select your ingredients:</h2>
+        </div>
+        <div class="row mt-4">
+            <h3>Fruits</h3>
+        </div>
+    </div>
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top fixed-bottom">
+        <button class="btn btn-outline-light d-none">⬅️ Add Ingredients</button>
+        <button class="btn btn-outline-light">Select Recipes ➡️</button>
+    </footer>
+</body>
+
+</html>
