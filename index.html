@@ -25,12 +25,10 @@
             <h1>Shopper</h1>
         </div>
     </nav>
-    <div class="container">
-        <div class="row mt-4">
-            <h2>Select your ingredients:</h2>
-        </div>
-        <div class="row mt-4">
-            <h3>Fruits</h3>
+    <div id="ingredients-container" class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+            </div>
         </div>
     </div>
     <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top fixed-bottom">
@@ -38,5 +36,46 @@
         <button class="btn btn-outline-light">Select Recipes ➡️</button>
     </footer>
 </body>
+
+<script>
+    const foodCategories = {
+        "🥩 Proteins": ["Ground Beef"],
+        "🥬 Vegetables": ["Onion", "Garlic"],
+        "🍎 Fruits": [],
+        "🍞 Carbs": ["Rice"],
+        "🥫 Cans": ["Chickpeas", "Diced Tomatoes"],
+        "🧀 Dairy": [],
+        "🧂 Extras": ["Oregano", "Ground Cumin", "Red Pepper Flakes", "Worcestershire Sauce", "Chicken Broth"]
+    };
+
+    const ingredientsContainer = document.getElementById("ingredients-container");
+
+    for (const [category, items] of Object.entries(foodCategories)) {
+        const row = document.createElement("div");
+        row.className = "row mt-4";
+
+        const title = document.createElement("h3");
+        title.textContent = category;
+        row.appendChild(title)
+
+        const btnContainer = document.createElement("p");
+        btnContainer.className = "d-flex flex-wrap gap-2 mt-2";
+
+        items.forEach(item => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "btn btn-outline-light";
+            button.setAttribute("data-bs-toggle", "button");
+            button.textContent = item;
+            btnContainer.appendChild(button);
+        });
+
+        row.appendChild(btnContainer);
+        ingredientsContainer.appendChild(row);
+
+        // todo: ability to add ingredients
+    }
+
+</script>
 
 </html>
